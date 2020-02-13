@@ -185,7 +185,7 @@ Function CleanLogFiles($TargetFolder)
         {
             $Files = Get-ChildItem $TargetFolder -Recurse -ErrorAction Stop 
             $FolderSize = "{0:N2} GB" -f (($Files | measure Length -s).sum / 1Gb)
-            $FolderSize
+            Write-Host $TargetFolder " has a file size of " $FolderSize "`n"
         }
         catch [System.UnauthorizedAccessException]
         {
